@@ -58,9 +58,41 @@ def kelvin_to_celsius(kelvin):
     """
     return kelvin - 273.15
 
-if name == "main":
-# Quick test of conversion functions
+def celsius_to_rankine(celsius):
+    """
+    Convert temperature from Celsius to Rankine.
+    Formula: Rankine = (Celsius + 273.15) × 9/5
+    Args:
+    celsius (float): Temperature in Celsius
+    Returns:
+    float: Temperature in Rankine
+    Example:
+    >>> celsius_to_rankine(0)
+    491.67
+    """
+    kelvin = celsius_to_kelvin(celsius)
+    return kelvin * 9/5
+
+def rankine_to_celsius(rankine):
+    """
+    Convert temperature from Rankine to Celsius.
+    Formula: Celsius = (Rankine × 5/9) - 273.15
+    Args:
+    rankine (float): Temperature in Rankine
+    Returns:
+    float: Temperature in Celsius
+    Example:
+    >>> rankine_to_celsius(491.67)
+    0.0
+    """
+    kelvin = rankine * 5/9
+    return kelvin_to_celsius(kelvin)
+
+if __name__ == "__main__":
+    # Quick test of conversion functions
     print("Temperature Converter Tests")
     print(f"0°C = {celsius_to_fahrenheit(0)}°F")
     print(f"100°C = {celsius_to_fahrenheit(100)}°F")
     print(f"0°C = {celsius_to_kelvin(0)}K")
+    print(f"0°C = {celsius_to_rankine(0)}°R")
+    print(f"491.67°R = {rankine_to_celsius(491.67)}°C")
