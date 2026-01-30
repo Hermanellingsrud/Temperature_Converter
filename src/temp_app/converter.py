@@ -88,6 +88,18 @@ def rankine_to_celsius(rankine):
     kelvin = rankine * 5/9
     return kelvin_to_celsius(kelvin)
 
+def is_fever(celsius):
+    """
+    Returns True if temperature is considered a fever (>38°C)
+    """
+    return celsius > 38.0
+
+def is_valid_temp(celsius):
+    """
+    Returns True if temperature is in a valid range (30-45°C)
+    """
+    return 30.0 <= celsius <= 45.0
+
 if __name__ == "__main__":
     # Quick test of conversion functions
     print("Temperature Converter Tests")
